@@ -73,9 +73,7 @@ class Unit extends Model
         return $this->belongsToMany(\App\Models\JenisParameter::class,'hasil')
             ->using(\App\Models\Hasil::class)
             ->withPivot([
-                'created_at',
-                'value',
-                'updated_at'
-            ]);
+                'value'
+            ])->withTimestamps();
     }
 }
