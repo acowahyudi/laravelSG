@@ -5,14 +5,14 @@ namespace App\Http\Controllers\API;
 use App\Http\Requests\API\CreateJenisParameterAPIRequest;
 use App\Http\Requests\API\UpdateJenisParameterAPIRequest;
 use App\Models\JenisParameter;
-use App\Models\Unit;
+
 use App\Repositories\JenisParameterRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-
+use App\Models\Unit;
 /**
  * Class JenisParameterController
  * @package App\Http\Controllers\API
