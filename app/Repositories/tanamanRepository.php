@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\tanaman;
+use App\Models\Tanaman;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class tanamanRepository
+ * Class TanamanRepository
  * @package App\Repositories
- * @version November 12, 2018, 1:46 pm UTC
+ * @version November 23, 2018, 7:01 am UTC
  *
- * @method tanaman findWithoutFail($id, $columns = ['*'])
- * @method tanaman find($id, $columns = ['*'])
- * @method tanaman first($columns = ['*'])
+ * @method Tanaman findWithoutFail($id, $columns = ['*'])
+ * @method Tanaman find($id, $columns = ['*'])
+ * @method Tanaman first($columns = ['*'])
 */
-class tanamanRepository extends BaseRepository
+class TanamanRepository extends BaseRepository
 {
     /**
      * @var array
@@ -29,6 +29,6 @@ class tanamanRepository extends BaseRepository
      **/
     public function model()
     {
-        return tanaman::class;
+        return Tanaman::class;
     }
 }

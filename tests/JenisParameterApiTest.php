@@ -3,16 +3,16 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class jenis_parameterApiTest extends TestCase
+class JenisParameterApiTest extends TestCase
 {
-    use Makejenis_parameterTrait, ApiTestTrait, WithoutMiddleware, DatabaseTransactions;
+    use MakeJenisParameterTrait, ApiTestTrait, WithoutMiddleware, DatabaseTransactions;
 
     /**
      * @test
      */
-    public function testCreatejenis_parameter()
+    public function testCreateJenisParameter()
     {
-        $jenisParameter = $this->fakejenis_parameterData();
+        $jenisParameter = $this->fakeJenisParameterData();
         $this->json('POST', '/api/v1/jenisParameters', $jenisParameter);
 
         $this->assertApiResponse($jenisParameter);
@@ -21,9 +21,9 @@ class jenis_parameterApiTest extends TestCase
     /**
      * @test
      */
-    public function testReadjenis_parameter()
+    public function testReadJenisParameter()
     {
-        $jenisParameter = $this->makejenis_parameter();
+        $jenisParameter = $this->makeJenisParameter();
         $this->json('GET', '/api/v1/jenisParameters/'.$jenisParameter->id);
 
         $this->assertApiResponse($jenisParameter->toArray());
@@ -32,22 +32,22 @@ class jenis_parameterApiTest extends TestCase
     /**
      * @test
      */
-    public function testUpdatejenis_parameter()
+    public function testUpdateJenisParameter()
     {
-        $jenisParameter = $this->makejenis_parameter();
-        $editedjenis_parameter = $this->fakejenis_parameterData();
+        $jenisParameter = $this->makeJenisParameter();
+        $editedJenisParameter = $this->fakeJenisParameterData();
 
-        $this->json('PUT', '/api/v1/jenisParameters/'.$jenisParameter->id, $editedjenis_parameter);
+        $this->json('PUT', '/api/v1/jenisParameters/'.$jenisParameter->id, $editedJenisParameter);
 
-        $this->assertApiResponse($editedjenis_parameter);
+        $this->assertApiResponse($editedJenisParameter);
     }
 
     /**
      * @test
      */
-    public function testDeletejenis_parameter()
+    public function testDeleteJenisParameter()
     {
-        $jenisParameter = $this->makejenis_parameter();
+        $jenisParameter = $this->makeJenisParameter();
         $this->json('DELETE', '/api/v1/jenisParameters/'.$jenisParameter->id);
 
         $this->assertApiSuccess();

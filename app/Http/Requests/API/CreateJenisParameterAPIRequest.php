@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\API;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Models\jenis_parameter;
+use App\Models\JenisParameter;
+use InfyOm\Generator\Request\APIRequest;
 
-class Updatejenis_parameterRequest extends FormRequest
+class CreateJenisParameterAPIRequest extends APIRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,6 +24,6 @@ class Updatejenis_parameterRequest extends FormRequest
      */
     public function rules()
     {
-        return jenis_parameter::$rules;
+        return JenisParameter::$rules;
     }
 }

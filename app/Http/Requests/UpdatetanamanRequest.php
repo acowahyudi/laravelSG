@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\tanaman;
+use App\Models\Tanaman;
 
-class UpdatetanamanRequest extends FormRequest
+class UpdateTanamanRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class UpdatetanamanRequest extends FormRequest
      */
     public function rules()
     {
-        return tanaman::$rules;
+        return Tanaman::$rules;
     }
 }

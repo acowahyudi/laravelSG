@@ -6,9 +6,9 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class tanaman
+ * Class Tanaman
  * @package App\Models
- * @version November 12, 2018, 1:46 pm UTC
+ * @version November 23, 2018, 7:01 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection hasil
  * @property \Illuminate\Database\Eloquent\Collection permissionRole
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string nama
  * @property string gambar
  */
-class tanaman extends Model
+class Tanaman extends Model
 {
     use SoftDeletes;
 
@@ -61,7 +61,15 @@ class tanaman extends Model
      **/
     public function tindakanTanaman()
     {
-        return $this->hasOne(\App\Models\TindakanTanaman::class);
+        //return $this->hasOne(\App\Models\TindakanTanaman::class);
+        return $this->belongsToMany(\App\Models\Tindakan::class,'tindakan_tanaman')
+            ->using(\App\Models\TindakanTanaman::class)
+            ->withPivot([
+                'limit_atas',
+                'limit_bawah',
+                'created_at',
+                'updated_at'
+            ]);
     }
 
     /**

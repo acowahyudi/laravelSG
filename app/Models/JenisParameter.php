@@ -6,9 +6,9 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class jenis_parameter
+ * Class JenisParameter
  * @package App\Models
- * @version November 12, 2018, 1:46 pm UTC
+ * @version November 23, 2018, 8:21 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection hasil
  * @property \Illuminate\Database\Eloquent\Collection permissionRole
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Database\Eloquent\Collection TindakanTanaman
  * @property string nama
  */
-class jenis_parameter extends Model
+class JenisParameter extends Model
 {
     use SoftDeletes;
 

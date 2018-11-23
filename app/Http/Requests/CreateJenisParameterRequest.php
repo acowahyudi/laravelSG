@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\jenis_parameter;
+use App\Models\JenisParameter;
 
-class Createjenis_parameterRequest extends FormRequest
+class CreateJenisParameterRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class Createjenis_parameterRequest extends FormRequest
      */
     public function rules()
     {
-        return jenis_parameter::$rules;
+        return JenisParameter::$rules;
     }
 }

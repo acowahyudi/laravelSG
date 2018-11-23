@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\tindakan;
+use App\Models\Tindakan;
 
-class CreatetindakanRequest extends FormRequest
+class CreateTindakanRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreatetindakanRequest extends FormRequest
      */
     public function rules()
     {
-        return tindakan::$rules;
+        return Tindakan::$rules;
     }
 }

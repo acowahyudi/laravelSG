@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\unit;
+use App\Models\Unit;
 
-class CreateunitRequest extends FormRequest
+class CreateUnitRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreateunitRequest extends FormRequest
      */
     public function rules()
     {
-        return unit::$rules;
+        return Unit::$rules;
     }
 }

@@ -20,10 +20,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('jenisParameters', 'jenis_parameterController');
 
-Route::resource('tanamen', 'tanamanController');
 
-Route::resource('tindakans', 'tindakanController');
 
-Route::resource('units', 'unitController');
+
+
+
+
+
+
+
+Route::resource('units', 'UnitController');
+
+Route::resource('jenisParameters', 'JenisParameterController');
+
+
+
+Route::resource('tindakans', 'TindakanController');
+
+Route::resource('tanamen', 'TanamanController');

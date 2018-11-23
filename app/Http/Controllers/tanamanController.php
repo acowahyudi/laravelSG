@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatetanamanRequest;
-use App\Http\Requests\UpdatetanamanRequest;
-use App\Repositories\tanamanRepository;
+use App\Http\Requests\CreateTanamanRequest;
+use App\Http\Requests\UpdateTanamanRequest;
+use App\Repositories\TanamanRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
-class tanamanController extends AppBaseController
+class TanamanController extends AppBaseController
 {
-    /** @var  tanamanRepository */
+    /** @var  TanamanRepository */
     private $tanamanRepository;
 
-    public function __construct(tanamanRepository $tanamanRepo)
+    public function __construct(TanamanRepository $tanamanRepo)
     {
         $this->tanamanRepository = $tanamanRepo;
     }
 
     /**
-     * Display a listing of the tanaman.
+     * Display a listing of the Tanaman.
      *
      * @param Request $request
      * @return Response
@@ -37,7 +37,7 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new tanaman.
+     * Show the form for creating a new Tanaman.
      *
      * @return Response
      */
@@ -47,13 +47,13 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Store a newly created tanaman in storage.
+     * Store a newly created Tanaman in storage.
      *
-     * @param CreatetanamanRequest $request
+     * @param CreateTanamanRequest $request
      *
      * @return Response
      */
-    public function store(CreatetanamanRequest $request)
+    public function store(CreateTanamanRequest $request)
     {
         $input = $request->all();
 
@@ -65,7 +65,7 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Display the specified tanaman.
+     * Display the specified Tanaman.
      *
      * @param  int $id
      *
@@ -85,7 +85,7 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified tanaman.
+     * Show the form for editing the specified Tanaman.
      *
      * @param  int $id
      *
@@ -105,14 +105,14 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Update the specified tanaman in storage.
+     * Update the specified Tanaman in storage.
      *
      * @param  int              $id
-     * @param UpdatetanamanRequest $request
+     * @param UpdateTanamanRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdatetanamanRequest $request)
+    public function update($id, UpdateTanamanRequest $request)
     {
         $tanaman = $this->tanamanRepository->findWithoutFail($id);
 
@@ -130,7 +130,7 @@ class tanamanController extends AppBaseController
     }
 
     /**
-     * Remove the specified tanaman from storage.
+     * Remove the specified Tanaman from storage.
      *
      * @param  int $id
      *

@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\unit;
+use App\Models\Unit;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class unitRepository
+ * Class UnitRepository
  * @package App\Repositories
- * @version November 12, 2018, 1:47 pm UTC
+ * @version November 23, 2018, 6:58 am UTC
  *
- * @method unit findWithoutFail($id, $columns = ['*'])
- * @method unit find($id, $columns = ['*'])
- * @method unit first($columns = ['*'])
+ * @method Unit findWithoutFail($id, $columns = ['*'])
+ * @method Unit find($id, $columns = ['*'])
+ * @method Unit first($columns = ['*'])
 */
-class unitRepository extends BaseRepository
+class UnitRepository extends BaseRepository
 {
     /**
      * @var array
@@ -29,6 +29,6 @@ class unitRepository extends BaseRepository
      **/
     public function model()
     {
-        return unit::class;
+        return Unit::class;
     }
 }

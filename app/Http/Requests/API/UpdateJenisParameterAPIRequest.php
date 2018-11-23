@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\API;
 
-use App\Models\tindakan;
+use App\Models\JenisParameter;
 use InfyOm\Generator\Request\APIRequest;
 
-class CreatetindakanAPIRequest extends APIRequest
+class UpdateJenisParameterAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,6 @@ class CreatetindakanAPIRequest extends APIRequest
      */
     public function rules()
     {
-        return tindakan::$rules;
+        return JenisParameter::$rules;
     }
 }

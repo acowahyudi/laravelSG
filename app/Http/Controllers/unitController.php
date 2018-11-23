@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateunitRequest;
-use App\Http\Requests\UpdateunitRequest;
-use App\Repositories\unitRepository;
+use App\Http\Requests\CreateUnitRequest;
+use App\Http\Requests\UpdateUnitRequest;
+use App\Repositories\UnitRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
-class unitController extends AppBaseController
+class UnitController extends AppBaseController
 {
-    /** @var  unitRepository */
+    /** @var  UnitRepository */
     private $unitRepository;
 
-    public function __construct(unitRepository $unitRepo)
+    public function __construct(UnitRepository $unitRepo)
     {
         $this->unitRepository = $unitRepo;
     }
 
     /**
-     * Display a listing of the unit.
+     * Display a listing of the Unit.
      *
      * @param Request $request
      * @return Response
@@ -37,7 +37,7 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new unit.
+     * Show the form for creating a new Unit.
      *
      * @return Response
      */
@@ -47,13 +47,13 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Store a newly created unit in storage.
+     * Store a newly created Unit in storage.
      *
-     * @param CreateunitRequest $request
+     * @param CreateUnitRequest $request
      *
      * @return Response
      */
-    public function store(CreateunitRequest $request)
+    public function store(CreateUnitRequest $request)
     {
         $input = $request->all();
 
@@ -65,7 +65,7 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Display the specified unit.
+     * Display the specified Unit.
      *
      * @param  int $id
      *
@@ -85,7 +85,7 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified unit.
+     * Show the form for editing the specified Unit.
      *
      * @param  int $id
      *
@@ -105,14 +105,14 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Update the specified unit in storage.
+     * Update the specified Unit in storage.
      *
      * @param  int              $id
-     * @param UpdateunitRequest $request
+     * @param UpdateUnitRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateunitRequest $request)
+    public function update($id, UpdateUnitRequest $request)
     {
         $unit = $this->unitRepository->findWithoutFail($id);
 
@@ -130,7 +130,7 @@ class unitController extends AppBaseController
     }
 
     /**
-     * Remove the specified unit from storage.
+     * Remove the specified Unit from storage.
      *
      * @param  int $id
      *

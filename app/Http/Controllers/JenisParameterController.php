@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Createjenis_parameterRequest;
-use App\Http\Requests\Updatejenis_parameterRequest;
-use App\Repositories\jenis_parameterRepository;
+use App\Http\Requests\CreateJenisParameterRequest;
+use App\Http\Requests\UpdateJenisParameterRequest;
+use App\Repositories\JenisParameterRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
-class jenis_parameterController extends AppBaseController
+class JenisParameterController extends AppBaseController
 {
-    /** @var  jenis_parameterRepository */
+    /** @var  JenisParameterRepository */
     private $jenisParameterRepository;
 
-    public function __construct(jenis_parameterRepository $jenisParameterRepo)
+    public function __construct(JenisParameterRepository $jenisParameterRepo)
     {
         $this->jenisParameterRepository = $jenisParameterRepo;
     }
 
     /**
-     * Display a listing of the jenis_parameter.
+     * Display a listing of the JenisParameter.
      *
      * @param Request $request
      * @return Response
@@ -37,7 +37,7 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new jenis_parameter.
+     * Show the form for creating a new JenisParameter.
      *
      * @return Response
      */
@@ -47,13 +47,13 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Store a newly created jenis_parameter in storage.
+     * Store a newly created JenisParameter in storage.
      *
-     * @param Createjenis_parameterRequest $request
+     * @param CreateJenisParameterRequest $request
      *
      * @return Response
      */
-    public function store(Createjenis_parameterRequest $request)
+    public function store(CreateJenisParameterRequest $request)
     {
         $input = $request->all();
 
@@ -65,7 +65,7 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Display the specified jenis_parameter.
+     * Display the specified JenisParameter.
      *
      * @param  int $id
      *
@@ -85,7 +85,7 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified jenis_parameter.
+     * Show the form for editing the specified JenisParameter.
      *
      * @param  int $id
      *
@@ -105,14 +105,14 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Update the specified jenis_parameter in storage.
+     * Update the specified JenisParameter in storage.
      *
      * @param  int              $id
-     * @param Updatejenis_parameterRequest $request
+     * @param UpdateJenisParameterRequest $request
      *
      * @return Response
      */
-    public function update($id, Updatejenis_parameterRequest $request)
+    public function update($id, UpdateJenisParameterRequest $request)
     {
         $jenisParameter = $this->jenisParameterRepository->findWithoutFail($id);
 
@@ -130,7 +130,7 @@ class jenis_parameterController extends AppBaseController
     }
 
     /**
-     * Remove the specified jenis_parameter from storage.
+     * Remove the specified JenisParameter from storage.
      *
      * @param  int $id
      *

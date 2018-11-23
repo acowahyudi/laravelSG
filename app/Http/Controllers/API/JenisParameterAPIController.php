@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\Createjenis_parameterAPIRequest;
-use App\Http\Requests\API\Updatejenis_parameterAPIRequest;
-use App\Models\jenis_parameter;
-use App\Repositories\jenis_parameterRepository;
+use App\Http\Requests\API\CreateJenisParameterAPIRequest;
+use App\Http\Requests\API\UpdateJenisParameterAPIRequest;
+use App\Models\JenisParameter;
+use App\Repositories\JenisParameterRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
@@ -13,22 +13,22 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 /**
- * Class jenis_parameterController
+ * Class JenisParameterController
  * @package App\Http\Controllers\API
  */
 
-class jenis_parameterAPIController extends AppBaseController
+class JenisParameterAPIController extends AppBaseController
 {
-    /** @var  jenis_parameterRepository */
+    /** @var  JenisParameterRepository */
     private $jenisParameterRepository;
 
-    public function __construct(jenis_parameterRepository $jenisParameterRepo)
+    public function __construct(JenisParameterRepository $jenisParameterRepo)
     {
         $this->jenisParameterRepository = $jenisParameterRepo;
     }
 
     /**
-     * Display a listing of the jenis_parameter.
+     * Display a listing of the JenisParameter.
      * GET|HEAD /jenisParameters
      *
      * @param Request $request
@@ -44,14 +44,14 @@ class jenis_parameterAPIController extends AppBaseController
     }
 
     /**
-     * Store a newly created jenis_parameter in storage.
+     * Store a newly created JenisParameter in storage.
      * POST /jenisParameters
      *
-     * @param Createjenis_parameterAPIRequest $request
+     * @param CreateJenisParameterAPIRequest $request
      *
      * @return Response
      */
-    public function store(Createjenis_parameterAPIRequest $request)
+    public function store(CreateJenisParameterAPIRequest $request)
     {
         $input = $request->all();
 
@@ -61,7 +61,7 @@ class jenis_parameterAPIController extends AppBaseController
     }
 
     /**
-     * Display the specified jenis_parameter.
+     * Display the specified JenisParameter.
      * GET|HEAD /jenisParameters/{id}
      *
      * @param  int $id
@@ -70,7 +70,7 @@ class jenis_parameterAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var jenis_parameter $jenisParameter */
+        /** @var JenisParameter $jenisParameter */
         $jenisParameter = $this->jenisParameterRepository->findWithoutFail($id);
 
         if (empty($jenisParameter)) {
@@ -81,19 +81,19 @@ class jenis_parameterAPIController extends AppBaseController
     }
 
     /**
-     * Update the specified jenis_parameter in storage.
+     * Update the specified JenisParameter in storage.
      * PUT/PATCH /jenisParameters/{id}
      *
      * @param  int $id
-     * @param Updatejenis_parameterAPIRequest $request
+     * @param UpdateJenisParameterAPIRequest $request
      *
      * @return Response
      */
-    public function update($id, Updatejenis_parameterAPIRequest $request)
+    public function update($id, UpdateJenisParameterAPIRequest $request)
     {
         $input = $request->all();
 
-        /** @var jenis_parameter $jenisParameter */
+        /** @var JenisParameter $jenisParameter */
         $jenisParameter = $this->jenisParameterRepository->findWithoutFail($id);
 
         if (empty($jenisParameter)) {
@@ -102,11 +102,11 @@ class jenis_parameterAPIController extends AppBaseController
 
         $jenisParameter = $this->jenisParameterRepository->update($input, $id);
 
-        return $this->sendResponse($jenisParameter->toArray(), 'jenis_parameter updated successfully');
+        return $this->sendResponse($jenisParameter->toArray(), 'JenisParameter updated successfully');
     }
 
     /**
-     * Remove the specified jenis_parameter from storage.
+     * Remove the specified JenisParameter from storage.
      * DELETE /jenisParameters/{id}
      *
      * @param  int $id
@@ -115,7 +115,7 @@ class jenis_parameterAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var jenis_parameter $jenisParameter */
+        /** @var JenisParameter $jenisParameter */
         $jenisParameter = $this->jenisParameterRepository->findWithoutFail($id);
 
         if (empty($jenisParameter)) {

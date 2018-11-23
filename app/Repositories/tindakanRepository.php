@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\tindakan;
+use App\Models\Tindakan;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class tindakanRepository
+ * Class TindakanRepository
  * @package App\Repositories
- * @version November 12, 2018, 1:47 pm UTC
+ * @version November 23, 2018, 7:00 am UTC
  *
- * @method tindakan findWithoutFail($id, $columns = ['*'])
- * @method tindakan find($id, $columns = ['*'])
- * @method tindakan first($columns = ['*'])
+ * @method Tindakan findWithoutFail($id, $columns = ['*'])
+ * @method Tindakan find($id, $columns = ['*'])
+ * @method Tindakan first($columns = ['*'])
 */
-class tindakanRepository extends BaseRepository
+class TindakanRepository extends BaseRepository
 {
     /**
      * @var array
@@ -28,6 +28,6 @@ class tindakanRepository extends BaseRepository
      **/
     public function model()
     {
-        return tindakan::class;
+        return Tindakan::class;
     }
 }

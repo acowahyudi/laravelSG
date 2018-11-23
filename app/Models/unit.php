@@ -6,9 +6,9 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class unit
+ * Class Unit
  * @package App\Models
- * @version November 12, 2018, 1:47 pm UTC
+ * @version November 23, 2018, 6:58 am UTC
  *
  * @property \App\Models\Tanaman tanaman
  * @property \Illuminate\Database\Eloquent\Collection hasil
@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string nama
  * @property integer katalog_tanaman_id
  */
-class unit extends Model
+class Unit extends Model
 {
     use SoftDeletes;
 
@@ -68,6 +68,14 @@ class unit extends Model
      **/
     public function jenisParameters()
     {
-        return $this->belongsToMany(\App\Models\JenisParameter::class, 'hasil');
+        //return $this->belongsToMany(\App\Models\JenisParameter::class, 'hasil');
+
+        return $this->belongsToMany(\App\Models\JenisParameter::class,'hasil')
+            ->using(\App\Models\Hasil::class)
+            ->withPivot([
+                'created_at',
+                'value',
+                'updated_at'
+            ]);
     }
 }
