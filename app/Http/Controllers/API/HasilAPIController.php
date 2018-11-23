@@ -27,7 +27,7 @@ class HasilAPIController extends AppBaseController
         $input=$request->all();
         $unit=Unit::find($input['unit_id']);
         $jenis_parameter=JenisParameter::find($input['jenis_parameter_id']);
-        $unit->jenisParameters()->attach($jenis_parameter, ['value' => $input['value']);
+        $unit->jenisParameters()->attach($jenis_parameter, ['value' => $input['value']]);
         return $this->sendResponse($unit->toArray(), 'Hasil saved successfully');
     }
 }
