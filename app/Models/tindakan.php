@@ -52,19 +52,22 @@ class Tindakan extends Model
         
     ];
 
+    public function tindakanTanamen()
+    {
+        return $this->hasMany(\App\Models\TindakanTanaman::class);
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function Tanamen()
+    public function Tanaman()
     {
-        //return $this->hasMany(\App\Models\TindakanTanaman::class);
-        return $this->belongsToMany(\App\Models\Tanaman::class,'tindakan_tanaman')
+
+        return $this->belongsToMany(\App\Models\Tanaman::class,'hasil')
             ->using(\App\Models\TindakanTanaman::class)
             ->withPivot([
                 'limit_atas',
-                'limit_bawah',
-                'created_at',
-                'updated_at'
-            ]);
+                'limit_bawah'
+            ])->withTimestamps();
     }
 }

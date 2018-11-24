@@ -61,15 +61,8 @@ class Tanaman extends Model
      **/
     public function tindakanTanaman()
     {
-        //return $this->hasOne(\App\Models\TindakanTanaman::class);
-        return $this->belongsToMany(\App\Models\Tindakan::class,'tindakan_tanaman')
-            ->using(\App\Models\TindakanTanaman::class)
-            ->withPivot([
-                'limit_atas',
-                'limit_bawah',
-                'created_at',
-                'updated_at'
-            ]);
+        return $this->hasOne(\App\Models\TindakanTanaman::class);
+
     }
 
     /**
@@ -78,5 +71,16 @@ class Tanaman extends Model
     public function units()
     {
         return $this->hasMany(\App\Models\Unit::class);
+    }
+
+    public function Tindakan()
+    {
+
+        return $this->belongsToMany(\App\Models\Tindakan::class,'hasil')
+            ->using(\App\Models\Tindakan::class)
+            ->withPivot([
+                'limit_atas',
+                'limit_bawah'
+            ])->withTimestamps();
     }
 }

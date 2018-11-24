@@ -9,4 +9,3 @@ class Hasil extends Pivot
 
 }
 
-?>
