@@ -22,3 +22,5 @@ Route::resource('jenis_parameters', 'JenisParameterAPIController');
 Route::Post('hasil','HasilAPIController@store');
 
 Route::Get('tindakantanaman','TindakanTanamanAPIController@index');
+
+Route::Get('hasils', 'HasilAPIController@index');

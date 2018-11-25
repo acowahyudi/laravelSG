@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
+use App\Models\Hasil;
 use App\Models\JenisParameter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
@@ -10,7 +11,12 @@ use App\Models\Unit;
 
 class HasilAPIController extends AppBaseController
 {
+    public function index(Request $request)
+    {
 
+        $Hasil = Hasil::all();
+        return $this->sendResponse($Hasil, 'Hasil retrieved successfully');
+    }
 
     public function store(Request $request)
     {
