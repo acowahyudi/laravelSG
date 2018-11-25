@@ -15,7 +15,7 @@ class HasilAPIController extends AppBaseController
     {
 
         $Hasil = Hasil::where('jenis_parameter_id',1)
-                        ->orderBy('created_at')
+                        ->orderBy('created_at','desc')
                         ->take(5)
                         ->get();
         return $this->sendResponse($Hasil, 'Hasil pH retrieved successfully');
