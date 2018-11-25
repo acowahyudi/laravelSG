@@ -14,8 +14,11 @@ class HasilAPIController extends AppBaseController
     public function index(Request $request)
     {
 
-        $Hasil = Hasil::all();
-        return $this->sendResponse($Hasil, 'Hasil retrieved successfully');
+        $Hasil = Hasil::where('jenis_parameter_id',1)
+                        ->orderBy('created_at')
+                        ->take(5)
+                        ->get();
+        return $this->sendResponse($Hasil, 'Hasil pH retrieved successfully');
     }
 
     public function store(Request $request)

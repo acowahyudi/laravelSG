@@ -23,4 +23,5 @@ Route::Post('hasil','HasilAPIController@store');
 
 Route::Get('tindakantanaman','TindakanTanamanAPIController@index');
 
-Route::Get('hasils', 'HasilAPIController@index');
+Route::Get('hasilph', 'HasilAPIController@index');
+Route::Get('hasilrh', 'HasilAPIController2@index');
